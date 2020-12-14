@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 int BinarySearch(int arr[], int x, int left, int right) {
   int mid = (left + right) / 2;
