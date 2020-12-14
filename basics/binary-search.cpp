@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-int BinarySearch(std::vector<int> arr, int x, int left, int right) {
+int BinarySearch(int arr[], int x, int left, int right) {
   int mid = (left + right) / 2;
   if (x == arr[mid])
     return mid;
@@ -14,7 +14,8 @@ int BinarySearch(std::vector<int> arr, int x, int left, int right) {
 }
 
 int main() {
-  std::vector<int> arr{2, 5, 8, 12, 16, 23, 38, 56, 72, 91, 111};
-  std::cout << BinarySearch(arr, 23, 0, arr.size() - 1) << std::endl;
+  int arr[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91, 111};
+  int arrSize = sizeof(arr) / sizeof(arr[0]);
+  std::cout << BinarySearch(arr, 23, 0, arrSize - 1) << std::endl;
   return 0;
 }
