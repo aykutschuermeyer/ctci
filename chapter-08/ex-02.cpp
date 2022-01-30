@@ -1,6 +1,6 @@
 #include <iostream>
 
-void findNumberOfPaths(int *count, int n, int k, int currentN = 1, int currentK = 1)
+void findNumberOfPaths(int &count, int n, int k, int currentN = 1, int currentK = 1)
 {
     if (currentN != n)
         findNumberOfPaths(count, n, k, currentN + 1, currentK);
@@ -9,13 +9,13 @@ void findNumberOfPaths(int *count, int n, int k, int currentN = 1, int currentK 
         findNumberOfPaths(count, n, k, currentN, currentK + 1);
 
     if (currentN == n && currentK == k)
-        (*count)++;
+        count++;
 }
 
 int main()
 {
     int numberOfPaths = 0;
-    findNumberOfPaths(&numberOfPaths, 3, 3);
+    findNumberOfPaths(numberOfPaths, 4, 4);
 
     std::cout << numberOfPaths << std::endl;
 }
