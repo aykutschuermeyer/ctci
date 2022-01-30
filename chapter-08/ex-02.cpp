@@ -1,23 +1,21 @@
 #include <iostream>
 
-void findNumberOfPaths(int *count, int n, int k, int currentN, int currentK)
+void findNumberOfPaths(int *count, int n, int k, int currentN = 1, int currentK = 1)
 {
-    if (n != currentN)
+    if (currentN != n)
         findNumberOfPaths(count, n, k, currentN + 1, currentK);
 
-    if (k != currentK)
+    if (currentK != k)
         findNumberOfPaths(count, n, k, currentN, currentK + 1);
 
-    if (n == currentN && k == currentK)
+    if (currentN == n && currentK == k)
         (*count)++;
 }
 
 int main()
 {
-    int *numberOfPaths;
-    *numberOfPaths = 0;
+    int numberOfPaths = 0;
+    findNumberOfPaths(&numberOfPaths, 3, 3);
 
-    findNumberOfPaths(numberOfPaths, 3, 3, 1, 1);
-
-    std::cout << *numberOfPaths << std::endl;
+    std::cout << numberOfPaths << std::endl;
 }
