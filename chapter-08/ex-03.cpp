@@ -8,6 +8,7 @@ void findSubsets(std::vector<std::vector<int>> &subsets, std::vector<int> arr, s
         subsets.push_back(currentSubset);
         return;
     }
+
     findSubsets(subsets, arr, currentSubset, index + 1);
 
     currentSubset.push_back(arr[index]);
